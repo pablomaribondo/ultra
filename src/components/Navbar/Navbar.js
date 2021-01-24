@@ -26,6 +26,8 @@ const Navbar = () => {
 
   const handleClick = () => setClick(!click);
 
+  const closeMobileMenu = () => setClick(false);
+
   const showButton = () => setButton(window.innerWidth <= 960);
 
   window.addEventListener("resize", showButton);
@@ -35,7 +37,7 @@ const Navbar = () => {
       <IconContext.Provider value={{ color: "#fff" }}>
         <Nav>
           <NavbarContainer>
-            <NavLogo to="/">
+            <NavLogo to="/" onClick={closeMobileMenu}>
               <NavIcon />
               ULTRA
             </NavLogo>
